@@ -4,8 +4,8 @@
     <div>
         <div>{{$post->id}}.{{$post->title}}</div>
         <div>{{$post->content}}</div>
-        <div>{{$post->image}}</div>
-        <div>{{$post->likes}}</div>
+        <img src="{{$post->image}}" style="max-width: 300px">
+        <div>{{$post->likes}} likes</div>
     </div>
     <div style="display: flex;justify-content: space-between;width: 300px">
         <form action="{{route('post.edit',$post->id)}}" method="get">

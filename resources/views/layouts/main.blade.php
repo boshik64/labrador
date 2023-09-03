@@ -35,10 +35,11 @@
         </div>
     </nav>
 
-
     <div>
         @yield('content')
     </div>
+
+</div>
 
 </body>
 </html>
