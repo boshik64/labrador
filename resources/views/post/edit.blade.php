@@ -22,8 +22,19 @@
         <label for="customRange2" class="form-label">Likes</label>
         <input type="range" name="likes" class="form-range" min="0" max="100" id="customRange2"
                value="{{$post->likes}}">
+
+        <select class="form-select" style="margin-bottom: 15px" aria-label="Category" id="category" name="category_id">
+            @foreach($categories as $category)
+                <option
+                    {{$category->id===$post->category->id ? 'selected' : ''}}
+                    value="{{$category->id}}">{{$category->title}}</option>
+            @endforeach
+
+        </select>
+
         <button type="submit" class="btn btn-primary">Update</button>
-        <button class="btn btn-primary"><a  style="text-decoration: none;color: white" href="{{route('post.show',$post->id)}}">Back</a></button>
+        <button class="btn btn-primary"><a style="text-decoration: none;color: white"
+                                           href="{{route('post.show',$post->id)}}">Back</a></button>
     </form>
 
 @endsection
