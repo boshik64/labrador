@@ -32,6 +32,17 @@
 
         </select>
 
+
+        <select class="form-select" id="tags" name="tags[]" multiple aria-label="multiple select example">
+            @foreach($tags as $tag)
+                <option
+                    @foreach($post->tags as $postTag)
+                        {{$tag->id===$postTag->id ? 'selected' : ''}}
+                    @endforeach
+                    value="{{$tag->id}}">{{$tag->title}}</option>
+            @endforeach
+        </select>
+
         <button type="submit" class="btn btn-primary">Update</button>
         <button class="btn btn-primary"><a style="text-decoration: none;color: white"
                                            href="{{route('post.show',$post->id)}}">Back</a></button>

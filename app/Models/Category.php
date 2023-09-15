@@ -4,16 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
-    protected $guarded = [];
+    protected $guarded = false;
 
-    public function posts()
+    public function post()
     {
         return $this->hasMany(Post::class);
     }
