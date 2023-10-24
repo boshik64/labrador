@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::get('/', function () {
-////    return view('welcome');
+//    return view('welcome');
 //    return 'welcome';
 //});
-Route::get('/', [\App\Http\Controllers\MainController::class])->name('main.index');
+
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index'])->name('main.index');
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Post'], function () {

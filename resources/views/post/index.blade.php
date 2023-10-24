@@ -17,6 +17,9 @@ overflow: hidden;">{{$post->content}}</p>
             </div>
 
         @endforeach
+        <div>
+            {{$posts->withQueryString()->links()}}
+        </div>
     </div>
     <br>
     {{--    <div style="margin-left: 15px"><a href=""></a></div>--}}
